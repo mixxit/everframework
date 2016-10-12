@@ -8,35 +8,38 @@ namespace everframework
 {
     public class Zone
     {
-        string name;
-        World world;
-        List<NPC> npcs = new List<NPC>();
+        private string _name;
+        private World _world;
+        private List<ActiveMob> _activemobs = new List<ActiveMob>();
+        private List<SpawnGroup> _spawngroups;
 
-        public Zone(World world, string name)
+        public Zone(World world, string name, List<SpawnGroup> spawngroups)
         {
-            this.world = world;
-            this.name = name;
+            this._world = world;
+            this._name = name;
+            this._spawngroups = spawngroups;
         }
 
-        public void SpawnNPC(NPC npc, Location location)
+        public void SpawnMob(Mob mob, Location location)
         {
-            npcs.Add(npc);
-            npc.Teleport(location);
+            ActiveMob activemob = new ActiveMob(mob, location.GetZone());
+            _activemobs.Add(activemob);
+            activemob.Teleport(location);
         }
 
-        public NPC GetNPCByGUID(Guid guid)
+        public ActiveMob GetMobByGUID(Guid guid)
         {
-            return npcs.Where(n => n.GetGuid().Equals(guid)).First();
+            return _activemobs.Where(n => n.GetGuid().Equals(guid)).First();
         }
 
         public World GetWorld()
         {
-            return this.world;
+            return this._world;
         }
 
         public string GetName()
         {
-            return this.name;
+            return this._name;
         }
     }
 }

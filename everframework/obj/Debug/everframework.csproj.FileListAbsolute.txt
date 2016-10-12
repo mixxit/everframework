@@ -3,3 +3,8 @@ C:\dev\git\everframework\everframework\bin\Debug\everframework.pdb
 C:\dev\git\everframework\everframework\obj\Debug\everframework.csprojResolveAssemblyReference.cache
 C:\dev\git\everframework\everframework\obj\Debug\everframework.dll
 C:\dev\git\everframework\everframework\obj\Debug\everframework.pdb
+E:\dev\git\everframework\everframework\obj\Debug\everframework.csprojResolveAssemblyReference.cache
+E:\dev\git\everframework\everframework\obj\Debug\everframework.dll
+E:\dev\git\everframework\everframework\obj\Debug\everframework.pdb
+E:\dev\git\everframework\everframework\bin\Debug\everframework.dll
+E:\dev\git\everframework\everframework\bin\Debug\everframework.pdb
