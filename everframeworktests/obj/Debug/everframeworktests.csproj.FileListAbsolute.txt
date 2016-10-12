@@ -1,0 +1,8 @@
+C:\dev\git\everframework\everframeworktests\obj\Debug\everframeworktests.csprojResolveAssemblyReference.cache
+C:\dev\git\everframework\everframeworktests\bin\Debug\everframeworktests.dll
+C:\dev\git\everframework\everframeworktests\bin\Debug\everframeworktests.pdb
+C:\dev\git\everframework\everframeworktests\bin\Debug\everframework.dll
+C:\dev\git\everframework\everframeworktests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\dev\git\everframework\everframeworktests\bin\Debug\everframework.pdb
+C:\dev\git\everframework\everframeworktests\obj\Debug\everframeworktests.dll
+C:\dev\git\everframework\everframeworktests\obj\Debug\everframeworktests.pdb

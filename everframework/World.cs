@@ -8,19 +8,16 @@ namespace everframework
 {
     public class World
     {
-        public string name;
-        private List<NPC> npcs = new List<NPC>();
+        private string name;
 
         public World(String name)
         {
             this.name = name;
         }
 
-        public void SpawnNPC(NPC npc, Location location)
+        public string GetName()
         {
-            npcs.Add(npc);
-            npc.Teleport(location);
-            
+            return this.name;
         }
     }
 }
