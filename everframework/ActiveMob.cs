@@ -12,11 +12,24 @@ namespace everframework
         Guid _guid = Guid.NewGuid();
         Location _location;
         Zone _zone;
+        ActiveSpawnGroup _activespawngroup;
 
         public ActiveMob(Mob mob, Zone zone)
         {
             this._mob = mob;
             this._zone = zone;
+        }
+
+        public ActiveMob(Mob mob, Zone zone, ActiveSpawnGroup activespanwgroup)
+        {
+            this._mob = mob;
+            this._zone = zone;
+            this._activespawngroup = activespanwgroup;
+        }
+
+        public ActiveSpawnGroup GetActiveSpawnGroup()
+        {
+            return this._activespawngroup;
         }
 
         public Guid GetGuid()
@@ -27,7 +40,7 @@ namespace everframework
         public void Teleport(Location location)
         {
             if (location.GetWorld() != _zone.GetWorld())
-                throw new InvalidTeleportTargetException("You cannot teleport between zones");
+                throw new InvalidTeleportTargetException("ActiveMob cannot teleport between zones");
             _location = location;
         }
     }

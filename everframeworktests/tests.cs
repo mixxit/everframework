@@ -31,8 +31,14 @@ namespace everframeworktests
         {
             World world = new World("TestWorld");
             List<SpawnGroup> spawngroups = new List<SpawnGroup>();
-
+            SpawnGroup spawngroup = new SpawnGroup("TestWorld", 0, 0, 0);
+            spawngroup.AddMob(new Mob("TestMob"));
+            spawngroups.Add(spawngroup);
             Zone zone = new Zone(world, "TestZone", spawngroups);
+            zone.TickSpawnGroups();
+
+            int count = zone.GetActiveMobs().Count;
+            Assert.AreEqual(1, count);
         }
     }
 }

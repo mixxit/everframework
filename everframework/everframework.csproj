@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActiveMob.cs" />
+    <Compile Include="ActiveSpawnGroup.cs" />
     <Compile Include="InvalidTeleportTargetException.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Mob.cs" />
