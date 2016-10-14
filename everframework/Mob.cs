@@ -8,7 +8,7 @@ namespace everframework
 {
     public class Mob
     {
-        public string _name;
+        internal string _name;
         public Mob(String name)
         {
             this._name = name;

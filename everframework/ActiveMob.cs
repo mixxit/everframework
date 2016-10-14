@@ -20,24 +20,29 @@ namespace everframework
             this._zone = zone;
         }
 
-        public ActiveMob(Mob mob, Zone zone, ActiveSpawnGroup activespanwgroup)
+        internal ActiveMob(Mob mob, Zone zone, ActiveSpawnGroup activespanwgroup)
         {
             this._mob = mob;
             this._zone = zone;
             this._activespawngroup = activespanwgroup;
         }
 
-        public ActiveSpawnGroup GetActiveSpawnGroup()
+        internal ActiveSpawnGroup GetActiveSpawnGroup()
         {
             return this._activespawngroup;
         }
 
-        public Guid GetGuid()
+        public void Despawn()
+        {
+            _zone.DespawnActiveMob(this);
+        }
+
+        internal Guid GetGuid()
         {
             return this._guid;
         }
 
-        public void Teleport(Location location)
+        internal void Teleport(Location location)
         {
             if (location.GetWorld() != _zone.GetWorld())
                 throw new InvalidTeleportTargetException("ActiveMob cannot teleport between zones");

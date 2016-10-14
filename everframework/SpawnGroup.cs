@@ -22,27 +22,27 @@ namespace everframework
             this._z = z;
         }
 
-        public decimal GetX()
+        internal decimal GetX()
         {
             return _x;
         }
 
-        public decimal GetY()
+        internal decimal GetY()
         {
             return _y;
         }
 
-        public decimal GetZ()
+        internal decimal GetZ()
         {
             return _z;
         }
 
-        public string GetWorldName()
+        internal string GetWorldName()
         {
             return _worldname;
         }
 
-        public List<Mob> GetMobs()
+        internal List<Mob> GetMobs()
         {
             return this._mobs;
         }

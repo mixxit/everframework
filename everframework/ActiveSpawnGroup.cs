@@ -28,7 +28,7 @@ namespace everframework
             return GetZone().GetActiveMobForSpawnGroup(this);
         }
 
-        public void OnTick()
+        internal void OnTick()
         {
             if (GetActiveMob() == null && _spawngroup.GetMobs().Count > 0)
             {
@@ -41,7 +41,7 @@ namespace everframework
             }
         }
 
-        public Zone GetZone()
+        internal Zone GetZone()
         {
             return this._zone;
         }

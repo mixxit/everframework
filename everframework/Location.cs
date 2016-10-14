@@ -21,27 +21,27 @@ namespace everframework
             this.zone = zone;
         }
 
-        public decimal GetX()
+        internal decimal GetX()
         {
             return this.x;
         }
 
-        public decimal GetY()
+        internal decimal GetY()
         {
             return this.y;
         }
 
-        public decimal GetZ()
+        internal decimal GetZ()
         {
             return this.z;
         }
 
-        public World GetWorld()
+        internal World GetWorld()
         {
             return this.zone.GetWorld();
         }
 
-        public Zone GetZone()
+        internal Zone GetZone()
         {
             return this.zone;
         }

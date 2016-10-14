@@ -27,6 +27,14 @@ namespace everframework
             this._timer.Enabled = true;
         }
 
+        public void DespawnActiveMob(ActiveMob activemob)
+        {
+            if (activemob.GetActiveSpawnGroup() != null)
+                _activespawngroups.Remove(activemob.GetActiveSpawnGroup());
+
+            _activemobs.Remove(activemob);
+        }
+
         private void OnTick(object sender, ElapsedEventArgs e)
         {
             TickSpawnGroups();
@@ -49,15 +57,23 @@ namespace everframework
 
         internal void SpawnMobForSpawnGroup(Mob mob, ActiveSpawnGroup activespawngroup, Location location)
         {
-            ActiveMob activemob = new ActiveMob(mob, location.GetZone());
+            ActiveMob activemob = new ActiveMob(mob, location.GetZone(), activespawngroup);
             _activemobs.Add(activemob);
             activemob.Teleport(location);
+        }
+
+        public ActiveSpawnGroup GetActiveSpawnGroupFromSpawnGroup(SpawnGroup spawngroup)
+        {
+            return _activespawngroups.Where(asg => asg.GetSpawnGroup().Equals(spawngroup)).FirstOrDefault();
         }
 
         public ActiveMob GetActiveMobForSpawnGroup(ActiveSpawnGroup spawngroup)
         {
             foreach(ActiveMob activemob in _activemobs)
             {
+                if (activemob.GetActiveSpawnGroup() == null)
+                    return null;
+
                 if (activemob.GetActiveSpawnGroup().Equals(spawngroup))
                     return activemob;
             }
@@ -77,17 +93,17 @@ namespace everframework
             activemob.Teleport(location);
         }
 
-        public ActiveMob GetMobByGUID(Guid guid)
+        internal ActiveMob GetMobByGUID(Guid guid)
         {
-            return _activemobs.Where(n => n.GetGuid().Equals(guid)).First();
+            return _activemobs.Where(n => n.GetGuid().Equals(guid)).FirstOrDefault();
         }
 
-        public World GetWorld()
+        internal World GetWorld()
         {
             return this._world;
         }
 
-        public string GetName()
+        internal string GetName()
         {
             return this._name;
         }

@@ -21,12 +21,12 @@ namespace everframework
             zones.Add(zone);
         }
 
-        public Zone GetZoneByName(string name)
+        internal Zone GetZoneByName(string name)
         {
-            return zones.Where(z => z.GetName().Equals(name)).First();
+            return zones.Where(z => z.GetName().Equals(name)).FirstOrDefault();
         }
 
-        public string GetName()
+        internal string GetName()
         {
             return this.name;
         }
